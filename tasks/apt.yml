@@ -26,3 +26,7 @@
   apt: pkg={{item}}
   with_items: apt_install_packages_list
   when: apt_install_packages
+
+- name: Upgrade system
+  apt: upgrade={{apt_upgrade}}
+  when: apt_upgrade == "safe" or apt_upgrade == "full" or apt_upgrade == "dist"

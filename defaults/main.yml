@@ -2,6 +2,7 @@
 
 apt_enabled: yes              # Enable the role
 apt_cache_valid_time: 3600    # Time (in seconds) the apt cache stays valid
+apt_upgrade:                  # Perfoms aptupgrade. Values are (safe, full, dist)
 apt_install_recommends: no    # Install the "recommended" packages
 apt_install_suggests: no      # Install the "suggested" packages
 apt_repositories: []          # List of sources which be added
