@@ -2,6 +2,7 @@ Stouts.apt
 ==========
 
 [![Build Status](https://travis-ci.org/Stouts/Stouts.apt.png)](https://travis-ci.org/Stouts/Stouts.apt)
+[![Stories in Ready](https://badge.waffle.io/Stouts/Stouts.apt.svg?label=ready&title=Ready)](http://waffle.io/Stouts/Stouts.apt)
 
 Ansible role apt which help you with:
 
