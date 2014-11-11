@@ -2,8 +2,7 @@ Stouts.apt
 ==========
 
 [![Build Status](http://img.shields.io/travis/Stouts/Stouts.apt.svg?style=flat-square)](https://travis-ci.org/Stouts/Stouts.apt)
-[![Galaxy](http://img.shields.io/badge/galaxy-Stouts.apt-blue.svg?style=flat-square)](https://galaxy.apt.com/list#/roles/852)
-[![Tag](http://img.shields.io/github/tag/Stouts/Stouts.apt.svg?style=flat-square)]()
+[![Galaxy](http://img.shields.io/badge/galaxy-Stouts.apt-blue.svg?style=flat-square)](https://galaxy.ansible.com/list#/roles/852)
 
 Ansible role apt which help you with:
 
