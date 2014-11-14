@@ -10,6 +10,8 @@ Ansible role apt which help you with:
 * control if you want recommended packages
 * control if you want suggested packages
 * optionally add additional sources
+* optionally install build-essential packages
+* optionally install default packages
 * optionally install additional packages
 
 #### Variables
