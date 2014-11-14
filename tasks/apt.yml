@@ -26,6 +26,12 @@
   apt: upgrade={{apt_upgrade}}
   when: apt_upgrade == "safe" or apt_upgrade == "full" or apt_upgrade == "dist"
 
+- name: Install build-essential packages
+  apt: name={{item}}
+  changed_when: False
+  with_items: apt_build_packages
+  when: apt_build_packages_install
+
 - name: Install default packages
   apt: name={{item}}
   with_items: apt_default_packages
