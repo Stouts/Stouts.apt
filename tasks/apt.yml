@@ -18,8 +18,12 @@
     - python-pycurl
     - unattended-upgrades
 
+- name: Reset default APT sources
+  command: mv /etc/apt/sources.list /etc/apt/sources.list~0
+  when: apt_sources_reset
+
 - name: Append additional sources
-  apt_repository: repo={{item}} update_cache=yes
+  apt_repository: repo='{{item}}' update_cache=yes
   with_items: apt_repositories
 
 - name: Upgrade system
