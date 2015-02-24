@@ -5,6 +5,7 @@ apt_cache_valid_time: 3600    # Time (in seconds) the apt cache stays valid
 apt_upgrade:                  # Perfoms aptupgrade. Values are (safe, full, dist)
 apt_install_recommends: no    # Install the "recommended" packages
 apt_install_suggests: no      # Install the "suggested" packages
+apt_sources_reset: no         # Mute original APT sources (it is intended to use a mirror directly)
 apt_repositories: []          # List of sources which be added
 apt_build_packages_install: yes # Install packages required to compiling
 apt_build_packages:
