@@ -17,16 +17,15 @@ Ansible role apt which help you with:
 #### Variables
 
 ```yaml
-apt_enabled: yes              # Enable the role
-apt_cache_valid_time: 3600    # Time (in seconds) the apt cache stays valid
-apt_upgrade: no               # Perfoms aptupgrade. Values are (safe, full, dist)
-apt_install_recommends: no    # Install the "recommended" packages
-apt_install_suggests: no      # Install the "suggested" packages
-apt_sources_reset: no         # Mute original APT sources (it is intended to use a mirror directly)
-apt_repositories: []          # List of sources which be added
-apt_install_packages: no      # Install some utilities (see lise bellow)
-apt_install_packages_list:    # List of packages which be installed
-  - ack
+apt_enabled: yes                  # Enable the role
+apt_cache_valid_time: 3600        # Time (in seconds) the apt cache stays valid
+apt_upgrade: no                   # Perfoms aptupgrade. Values are (safe, full, dist)
+apt_install_recommends: no        # Install the "recommended" packages
+apt_install_suggests: no          # Install the "suggested" packages
+apt_sources_reset: no             # Mute original APT sources (it is intended to use a mirror directly)
+apt_repositories: []              # List of sources which be added
+apt_default_packages_install: no  # Install some packages (see list bellow)
+apt_default_packages:             # List of packages which will be installed
   - command-not-found
   - curl
   - git
@@ -34,7 +33,6 @@ apt_install_packages_list:    # List of packages which be installed
   - iftop
   - iotop
   - mercurial
-  - mosh
   - nmap
   - pciutils
   - screen
