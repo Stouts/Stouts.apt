@@ -1,7 +1,9 @@
 ---
 
 - name: Update apt cache
-  apt: update_cache=yes cache_valid_time={{apt_cache_valid_time}}
+  apt:
+    update_cache: yes
+    cache_valid_time: "{{apt_cache_valid_time}}"
 
 - name: Update the configuration
   template:
@@ -12,11 +14,12 @@
     mode: 0644
 
 - name: Make sure the required packages are installed
-  apt: name={{item}} state=present
+  apt:
+    name: "{{item}}"
   with_items:
-    - python-apt
-    - python-pycurl
-    - unattended-upgrades
+  - python-apt
+  - python-pycurl
+  - unattended-upgrades
 
 - name: Reset default APT sources
   shell: mv /etc/apt/sources.list /etc/apt/sources.list~0
@@ -24,24 +27,30 @@
   ignore_errors: yes
 
 - name: Append additional sources
-  apt_repository: repo='{{item}}' update_cache=yes
-  with_items: apt_repositories
+  apt_repository:
+    repo: "{{item}}"
+    update_cache: yes
+  with_items: "{{apt_repositories}}"
 
 - name: Upgrade system
-  apt: upgrade={{apt_upgrade}}
+  apt:
+    upgrade: "{{apt_upgrade}}"
   when: apt_upgrade == "safe" or apt_upgrade == "full" or apt_upgrade == "dist"
 
 - name: Install build-essential packages
-  apt: name={{item}}
+  apt:
+    name: "{{item}}"
   changed_when: False
-  with_items: apt_build_packages
+  with_items: "{{apt_build_packages}}"
   when: apt_build_packages_install
 
 - name: Install default packages
-  apt: name={{item}}
-  with_items: apt_default_packages
+  apt:
+    name: "{{item}}"
+  with_items: "{{apt_default_packages}}"
   when: apt_default_packages_install
 
 - name: Install additional packages
-  apt: name={{item}}
-  with_items: apt_packages
+  apt:
+    name: "{{item}}"
+  with_items: "{{apt_packages}}"
