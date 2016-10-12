@@ -26,6 +26,11 @@
   when: apt_sources_reset
   ignore_errors: yes
 
+- name: Add third keys
+  apt_key:
+    url: '{{item.url}}'
+  with_items: "{{apt_third_keys}}"
+
 - name: Append additional sources
   apt_repository:
     repo: "{{item}}"
