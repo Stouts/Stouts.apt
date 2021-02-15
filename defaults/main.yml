@@ -25,7 +25,6 @@ apt_default_packages:         # List of packages which be installed
   - htop
   - iftop
   - iotop
-  - mercurial
   - nmap
   - pciutils
   - screen
