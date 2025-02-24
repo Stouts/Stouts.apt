@@ -1,5 +1,5 @@
 ---
 
-- import_tasks: apt.yml
+- include_tasks: apt.yml
   when: apt_enabled and ansible_os_family is defined and ansible_os_family == 'Debian'
   tags: [apt]
