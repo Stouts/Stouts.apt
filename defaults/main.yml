@@ -1,24 +1,24 @@
 ---
 
-apt_enabled: yes              # Enable the role
-apt_cache_valid_time: 3600    # Time (in seconds) the apt cache stays valid
-apt_upgrade:                  # Perfoms aptupgrade. Values are (safe, full, dist)
-apt_install_recommends: no    # Install the "recommended" packages
-apt_install_suggests: no      # Install the "suggested" packages
-apt_sources_reset: no         # Mute original APT sources (it is intended to use a mirror directly)
-apt_third_keys: []            # List of third signing keys
-apt_repositories: []          # List of sources which be added
-apt_build_packages_install: yes # Install packages required to compiling
+apt_enabled: true               # Enable the role
+apt_cache_valid_time: 3600      # Time (in seconds) the apt cache stays valid
+apt_upgrade:                    # Perfoms aptupgrade. Values are (safe, full, dist)
+apt_install_recommends: false   # Install the "recommended" packages
+apt_install_suggests: false     # Install the "suggested" packages
+apt_sources_reset: false        # Mute original APT sources (it is intended to use a mirror directly)
+apt_third_keys: []              # List of third signing keys
+apt_repositories: []            # List of sources which be added
+apt_build_packages_install: true  # Install packages required to compiling
 apt_build_packages:
-- autoconf
-- binutils-doc
-- bison
-- build-essential
-- flex
-- gettext
-- ncurses-dev
-apt_default_packages_install: yes  # Install some packages (see list bellow)
-apt_default_packages:         # List of packages which be installed
+  - autoconf
+  - binutils-doc
+  - bison
+  - build-essential
+  - flex
+  - gettext
+  - ncurses-dev
+apt_default_packages_install: true  # Install some packages (see list bellow)
+apt_default_packages:           # List of packages which be installed
   - command-not-found
   - curl
   - git
@@ -31,4 +31,4 @@ apt_default_packages:         # List of packages which be installed
   - sysstat
   - vim
   - wget
-apt_packages: []              # Set list of additional packages which will be installed
+apt_packages: []                # Set list of additional packages which will be installed

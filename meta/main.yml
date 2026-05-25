@@ -8,8 +8,8 @@ galaxy_info:
   description: Ansible role which manage apt
   license: MIT
   platforms:
-  - name: Ubuntu
-    versions:
-    - all
-  categories:
-  - system
+    - name: Ubuntu
+      versions:
+        - all
+  galaxy_tags:
+    - system
